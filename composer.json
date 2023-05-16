@@ -1,0 +1,21 @@
+{
+    "name": "qbus/mf-local-captcha",
+    "description": "Integrates a local captcha by MobiCMS into Mega Forms.",
+    "require-dev": {
+        "wp-coding-standards/wpcs": "^2.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Qbus\\MfLocalCaptcha\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Danny Schmarsel",
+            "email": "dsc@qbus.de"
+        }
+    ],
+    "require": {
+        "wp-cli/wp-cli-bundle": "*"
+    }
+}

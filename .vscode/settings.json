@@ -1,0 +1,22 @@
+{
+    // Disable builtin CSS validators
+    "css.validate": false,
+    "less.validate": false,
+    "scss.validate": false,
+    // Enable stylelint
+    "stylelint.validate": ["css", "scss"],
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true
+    },
+    // Auto-sync to dev when "Save and run with wsl" extension is installed
+    // https://marketplace.visualstudio.com/items?itemName=raiscui.save-and-run-wsl
+    "saveAndRun": {
+        "commands": [
+          {
+            "match": ".*",
+            "cmd": "make upload-to-dev",
+            "useShortcut": false
+          }
+        ]
+      }
+}

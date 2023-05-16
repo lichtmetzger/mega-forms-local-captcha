@@ -1,0 +1,34 @@
+# Copyright (C) 2023 Qbus Internetagentur GmbH
+# This file is distributed under the same license as the Mega Forms - Local Captcha plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Mega Forms - Local Captcha 1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/mega-forms-local-"
+"captcha\n"
+"POT-Creation-Date: 2023-05-16T19:43:35+02:00\n"
+"PO-Revision-Date: 2023-05-16 19:43+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.3.1\n"
+"X-Domain: mf-local-captcha\n"
+
+#. Plugin Name of the plugin
+msgid "Mega Forms - Local Captcha"
+msgstr "Mega Forms - Lokales Captcha"
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+msgid "https://qbus.de"
+msgstr "https://qbus.de"
+
+#. Description of the plugin
+msgid "Integrates a local captcha by MobiCMS into Mega Forms."
+msgstr "Integriert ein lokales Captcha von MobiCMS in Mega Forms."
+
+#. Author of the plugin
+msgid "Qbus Internetagentur GmbH"
+msgstr "Qbus Internetagentur GmbH"
