@@ -16,6 +16,7 @@
         }
     ],
     "require": {
-        "wp-cli/wp-cli-bundle": "*"
+        "wp-cli/wp-cli-bundle": "*",
+        "mobicms/captcha": "^3.1.0"
     }
 }
