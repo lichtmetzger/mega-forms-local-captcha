@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-05-16T19:43:35+02:00\n"
+"POT-Creation-Date: 2023-05-17T14:02:29+02:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: mega-forms-local-captcha\n"
@@ -29,4 +29,25 @@ msgstr ""
 
 #. Author of the plugin
 msgid "Qbus Internetagentur GmbH"
+msgstr ""
+
+#: src/Settings.php:23
+msgid "Local Captcha"
+msgstr ""
+
+#: src/Settings.php:36
+msgid "Enable MobiCMS Captcha"
+msgstr ""
+
+#: src/Settings.php:37
+msgid "Switch this on to enable locally generated MobiCMS captchas on all forms."
+msgstr ""
+
+#: src/Submissions.php:28
+msgid "Submission failed, you didn't complete the captcha challenge successfully."
+msgstr ""
+
+#: src/Views.php:25
+#: src/Views.php:28
+msgid "Verification code"
 msgstr ""
