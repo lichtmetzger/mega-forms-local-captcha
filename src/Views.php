@@ -21,7 +21,7 @@ class Views {
         // If MobiCMS Captcha is enabled, load it
 		if (mfget_option('mobicaptcha_status', false)) {
 			$code = (string) new Code;
-            $storedCode = mf_session()->get('_mf_captcha_code');
+            $storedCode = $_SESSION['_mf_captcha_code'];
 
             /* 
              * When embedding a contact form on an Elementor page, _mf_captcha_code is set multiple times,
@@ -34,9 +34,9 @@ class Views {
              * 
             */
             if(!$storedCode) {
-                mf_session()->set('_mf_captcha_code', $code);
+                $_SESSION['_mf_captcha_code'] = $code;
             } else {
-                mf_session()->set('_mf_captcha_code', $storedCode.','.$code);
+                $_SESSION['_mf_captcha_code'] = $storedCode.','.$code;
             }
 
 			echo

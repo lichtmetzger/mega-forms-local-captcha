@@ -20,7 +20,8 @@ class Submissions {
         // If MobiCMS captcha is enabled, validate it
 		if (mfget_option('mobicaptcha_status', false)) {
 			$result = mfpost('_mf_captcha_code', $object->posted, '');
-			$session = mf_session()->get('_mf_captcha_code');
+			//$session = mf_session()->get('_mf_captcha_code');
+			$session = $_SESSION['_mf_captcha_code'];
 			$codes = array_map('strtolower', explode(',', $session));
 			
 			if ($result !== null && $codes !== null) {

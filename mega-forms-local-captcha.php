@@ -5,7 +5,7 @@
  * Text Domain:       mega-forms-local-captcha
  * Domain Path:       /languages
  * Description:       Integrates a local captcha by MobiCMS into Mega Forms.
- * Version:           1.1
+ * Version:           1.2
  * Requires at least: 6.0
  * Author:            Qbus Internetagentur GmbH
  * Author URI:        https://qbus.de

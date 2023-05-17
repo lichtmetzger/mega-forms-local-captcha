@@ -13,11 +13,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 class Initialize {
     public function __construct() {
+        add_action( 'init', [$this, 'startSession'], 1 );
+
         // Register translations before everything else
         $translations = new Translations;
         add_action( 'init', [$translations, 'register'], 5 );
 
         add_action( 'init', [$this, 'loadMain'], 10 );
+    }
+
+    public function startSession() {
+        if ( ! session_id() ) {
+            session_start();
+        }
     }
 
     public function loadMain() {
