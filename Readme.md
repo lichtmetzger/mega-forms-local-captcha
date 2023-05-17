@@ -53,3 +53,15 @@ scss/main.scss is compiled into css/main.css.
 The intended way to build this is to use sass included by npm:
 
     npm run build-css
+
+## Build release ZIP file
+
+Make sure zip is installed:
+
+    sudo apt install zip
+
+Then run:
+
+    make release
+
+and you will get an unbloated mega-forms-local-captcha.zip that you can install in WordPress.
