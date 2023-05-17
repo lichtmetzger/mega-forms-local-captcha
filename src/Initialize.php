@@ -23,6 +23,7 @@ class Initialize {
     public function loadMain() {
         new Settings;
         new Views;
+        new Submissions;
         add_action( 'wp_enqueue_scripts', [$this, 'enqueueGlobalStyles'] );
     }
 
