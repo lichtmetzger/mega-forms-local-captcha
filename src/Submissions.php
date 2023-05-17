@@ -6,6 +6,8 @@ if ( ! defined( 'ABSPATH' ) ) {
     die( '' );
 }
 
+use Exception;
+
 class Submissions {
     public function __construct() {
 
@@ -25,7 +27,7 @@ class Submissions {
 					// CAPTCHA code is correct
 				} else {
 					// CAPTCHA code is incorrect, show an error to the user
-					throw new \Exception(__('Submission failed, you didn\'t complete the captcha challenge successfully.', 'mega-forms-local-captcha'));
+					throw new Exception(__('Submission failed, you didn\'t complete the captcha challenge successfully.', 'mega-forms-local-captcha'));
 				}
 			}
 		}
