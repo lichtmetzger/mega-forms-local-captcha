@@ -1,0 +1,25 @@
+/* stylelint-disable selector-class-pattern */
+.mform_container {
+
+	.mf_input_captcha_wrapper {
+		font-weight: 600;
+
+		.mf_required {
+			color: #fa5252;
+		}
+
+		.mf_input_captcha {
+			display: flex;
+			align-items: center;
+			gap: 5px;
+
+			input {
+				max-width: 120px;
+			}
+
+			img {
+				max-width: 200px;
+			}
+		}
+	}
+}
