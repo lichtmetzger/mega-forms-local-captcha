@@ -3,6 +3,7 @@
 namespace Qbus\MfLocalCaptcha;
 
 use Qbus\MfLocalCaptcha\Translations;
+use Qbus\MfLocalCaptcha\Settings;
 
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -19,6 +20,7 @@ class Initialize {
     }
 
     public function loadMain() {
+        new Settings;
         add_action( 'wp_enqueue_scripts', [$this, 'enqueueGlobalStyles'] );
     }
 
