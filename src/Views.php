@@ -21,7 +21,23 @@ class Views {
         // If MobiCMS Captcha is enabled, load it
 		if (mfget_option('mobicaptcha_status', false)) {
 			$code = (string) new Code;
-			mf_session()->set('_mf_captcha_code', $code);
+            $storedCode = mf_session()->get('_mf_captcha_code');
+
+            /* 
+             * When embedding a contact form on an Elementor page, _mf_captcha_code is set multiple times,
+             * but only one captcha image is created on the first run.
+             *
+             * This results in an unsolvable captcha since the last stored code doesn't neccessarily match the captcha image.
+             * The exact reason for this behaviour is unknown.
+             * As a workaround, we make sure that generated captcha codes are appended to each other in the session.
+             * We then check against all of those in the mf_submission_validation hook.
+             * 
+            */
+            if(!$storedCode) {
+                mf_session()->set('_mf_captcha_code', $code);
+            } else {
+                mf_session()->set('_mf_captcha_code', $storedCode.','.$code);
+            }
 
 			echo
 			'<div class="mf_input_captcha_wrapper">
