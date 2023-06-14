@@ -10,7 +10,7 @@
     },
     "devDependencies": {
         "@wordpress/scripts": "^25.1.0",
-        "@wordpress/stylelint-config": "^21.7.0",
-        "sass": "^1.57.1"
+        "@wordpress/stylelint-config": "^21.18.0",
+        "sass": "^1.63.4"
     }
 }

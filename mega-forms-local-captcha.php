@@ -9,18 +9,22 @@
  * Requires at least: 6.0
  * Author:            Qbus Internetagentur GmbH
  * Author URI:        https://qbus.de
- */
+ *
+ * @package wp-zfinder
+ **/
 
 if ( ! defined( 'ABSPATH' ) ) {
-    die( '' );
+	die( '' );
 }
 
-require "vendor/autoload.php";
-
-use Qbus\MfLocalCaptcha\Initialize;
+require_once dirname( __FILE__ ) . '/vendor/autoload.php';
 
 define( 'MF_LOCAL_CAPTCHA_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'MF_LOCAL_CAPTCHA_PLUGIN_URI', plugin_dir_url( __FILE__ ) );
+define( 'MF_LOCAL_CAPTCHA_MAIN_FILE', __FILE__ );
+define( 'MF_LOCAL_CAPTCHA_TEXTDOMAIN', 'mega-forms-local-captcha' );
 
-// Initialize plugin
-$init = new Initialize;
+// Initialize plugin.
+use Qbus\MfLocalCaptcha\Main;
+$main = new Main();
+$main->initialize();

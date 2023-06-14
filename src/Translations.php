@@ -3,12 +3,12 @@
 namespace Qbus\MfLocalCaptcha;
 
 if ( ! defined( 'ABSPATH' ) ) {
-    die( '' );
+	die( '' );
 }
 
 class Translations {
-    public function register() {
-        // Relative path to WP_PLUGIN_DIR
-        load_plugin_textdomain( 'mega-forms-local-captcha', false, 'mega-forms-local-captcha/languages/' );
-    }
+	public function register() {
+		// Relative path to WP_PLUGIN_DIR
+		load_plugin_textdomain( 'mega-forms-local-captcha', false, 'mega-forms-local-captcha/languages/' );
+	}
 }
