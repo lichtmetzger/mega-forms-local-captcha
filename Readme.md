@@ -7,9 +7,11 @@ https://getcomposer.org/download/
 
 Then initialize it in the project folder:
 ```
-composer install
-composer dump-autoload -o
+composer install --no-dev
+composer dump-autoload -o --no-dev
 ```
+
+(Omit the --no-dev parameter if you want to use wpcs.)
 
 This project is based on Node version 18.16.0. **If you use a different version and commit a reformatted package.json, you will be punished.**
 
