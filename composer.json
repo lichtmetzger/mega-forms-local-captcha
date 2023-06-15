@@ -6,11 +6,6 @@
         "wp-coding-standards/wpcs": "^2.3",
         "dealerdirect/phpcodesniffer-composer-installer": "^1.0"
     },
-    "autoload": {
-        "psr-4": {
-            "Qbus\\MfLocalCaptcha\\": "src/"
-        }
-    },
     "authors": [
         {
             "name": "Danny Schmarsel",
@@ -19,9 +14,11 @@
     ],
     "require": {
         "wp-cli/wp-cli-bundle": "*",
-        "mobicms/captcha": "^3.1.0"
+        "mobicms/captcha": "^3.1.0",
+        "pablo-sg-pacheco/wp-namespace-autoloader": "dev-master"
     },
     "config": {
+        "preferred-install": "dist",
         "allow-plugins": {
             "dealerdirect/phpcodesniffer-composer-installer": true
         }

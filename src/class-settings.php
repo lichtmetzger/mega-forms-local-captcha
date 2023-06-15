@@ -1,6 +1,6 @@
 <?php
 
-namespace Qbus\MfLocalCaptcha;
+namespace MfLocalCaptcha;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	die( '' );

@@ -1,10 +1,10 @@
 <?php
 
-namespace Qbus\MfLocalCaptcha;
+namespace MfLocalCaptcha;
 
-use Qbus\MfLocalCaptcha\Translations;
-use Qbus\MfLocalCaptcha\Settings;
-use Qbus\MfLocalCaptcha\Views;
+use MfLocalCaptcha\Translations;
+use MfLocalCaptcha\Settings;
+use MfLocalCaptcha\Views;
 
 
 if ( ! defined( 'ABSPATH' ) ) {
