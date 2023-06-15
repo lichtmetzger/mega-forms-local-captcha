@@ -10,7 +10,7 @@ use Mobicms\Captcha\Image;
 use Mobicms\Captcha\Code;
 
 class Views {
-	public function __construct() {
+	public function initialize() {
 
 		add_action( 'mf_after_hidden_inputs', array( $this, 'after_hidden_inputs' ), 10 );
 

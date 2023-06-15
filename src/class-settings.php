@@ -7,12 +7,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class Settings {
-	public function __construct() {
+	public function initialize() {
 
-		// Tabs
+		// Tabs.
 		add_filter( 'mf_option_tabs', array( $this, 'manage_option_tabs' ), 10, 1 );
 
-		// Options
+		// Options.
 		add_filter( 'mf_settings_options', array( $this, 'manage_options' ), 10, 1 );
 
 	}

@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 use Exception;
 
 class Submissions {
-	public function __construct() {
+	public function initialize() {
 
 		add_action( 'mf_submission_validation', array( $this, 'validate' ), 10, 1 );
 
