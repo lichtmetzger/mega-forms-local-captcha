@@ -1,4 +1,10 @@
 <?php
+/**
+ * Plugin settings.
+ *
+ * @package mega-forms-local-captcha
+ * @author Danny Schmarsel <dsc@qbus.de>
+ */
 
 namespace MfLocalCaptcha;
 
@@ -6,7 +12,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( '' );
 }
 
+/**
+ * Initialize Mega Forms Local Captcha plugin settings.
+ */
 class Settings {
+	/**
+	 * Registers various filters to load the
+	 * plugin settings at specific times.
+	 *
+	 * @return void
+	 */
 	public function initialize() {
 
 		// Tabs.
@@ -17,18 +32,30 @@ class Settings {
 
 	}
 
+	/**
+	 * Add new settings tabs to Mega Forms.
+	 *
+	 * @param  array $tabs Preregistered tabs.
+	 * @return array
+	 */
 	public function manage_option_tabs( $tabs ) {
 
-		// Insert a new subtab for local captcha into preexisting "Integrations"
+		// Add subtab to "Integrations".
 		$tabs['integrations']['children']['local-captcha'] = __( 'Local Captcha', 'mega-forms-local-captcha' );
 
 		return $tabs;
 
 	}
 
+	/**
+	 * Add new option pages to a settings tab.
+	 *
+	 * @param  array $options Preregistered option page content.
+	 * @return array
+	 */
 	public function manage_options( $options ) {
 
-		// Create new local captcha options
+		// Create new local captcha options.
 		$options['local-captcha'] = array(
 			'mobicaptcha_status' => array(
 				'priority'     => 10,
