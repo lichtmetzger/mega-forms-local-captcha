@@ -41,7 +41,7 @@ class Main {
 
 		// Load submission validation.
 		$submissions = new Submissions();
-		$submussions->initialize();
+		$submissions->initialize();
 
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_global_styles' ) );
 	}
