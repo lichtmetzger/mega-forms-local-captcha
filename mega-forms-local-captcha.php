@@ -36,7 +36,6 @@ $autoloader->init();
 define( 'MF_LOCAL_CAPTCHA_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'MF_LOCAL_CAPTCHA_PLUGIN_URI', plugin_dir_url( __FILE__ ) );
 define( 'MF_LOCAL_CAPTCHA_MAIN_FILE', __FILE__ );
-define( 'MF_LOCAL_CAPTCHA_TEXTDOMAIN', 'mega-forms-local-captcha' );
 
 // Initialize plugin.
 use MfLocalCaptcha\Main;
