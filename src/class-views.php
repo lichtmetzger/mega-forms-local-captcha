@@ -12,16 +12,16 @@ use Mobicms\Captcha\Code;
 class Views {
 	public function __construct() {
 
-		add_action( 'mf_after_hidden_inputs', array( $this, 'afterHiddenInputs' ), 10 );
+		add_action( 'mf_after_hidden_inputs', array( $this, 'after_hidden_inputs' ), 10 );
 
 	}
 
-	public function afterHiddenInputs() {
+	public function after_hidden_inputs() {
 
-		// If MobiCMS Captcha is enabled, load it
+		// If MobiCMS Captcha is enabled, load it.
 		if ( mfget_option( 'mobicaptcha_status', false ) ) {
-			$code       = (string) new Code();
-			$storedCode = $_SESSION['_mf_captcha_code'];
+			$code        = (string) new Code();
+			$stored_code = $_SESSION['_mf_captcha_code'];
 
 			/*
 			 * When embedding a contact form on an Elementor page, _mf_captcha_code is set multiple times,
@@ -33,10 +33,10 @@ class Views {
 			 * We then check against all of those in the mf_submission_validation hook.
 			 *
 			*/
-			if ( ! $storedCode ) {
+			if ( ! $stored_code ) {
 				$_SESSION['_mf_captcha_code'] = $code;
 			} else {
-				$_SESSION['_mf_captcha_code'] = $storedCode . ',' . $code;
+				$_SESSION['_mf_captcha_code'] = $stored_code . ',' . $code;
 			}
 
 			echo '<div class="mf_input_captcha_wrapper">
