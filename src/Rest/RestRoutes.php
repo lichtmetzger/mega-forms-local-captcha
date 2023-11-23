@@ -8,7 +8,7 @@
 
 namespace MfLocalCaptcha\Rest;
 
-use MfLocalCaptcha\Rest\ExampleCallback;
+use MfLocalCaptcha\Rest\GetCaptchaCallback;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	die( '' );

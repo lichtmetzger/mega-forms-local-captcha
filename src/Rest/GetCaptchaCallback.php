@@ -11,7 +11,6 @@ namespace MfLocalCaptcha\Rest;
 use \WP_REST_Response;
 use Mobicms\Captcha\Image;
 use Mobicms\Captcha\Code;
-use MfLocalCaptcha\Audio\Mp3;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	die( '' );
@@ -31,14 +30,12 @@ class GetCaptchaCallback {
 	public function initialize( $request ) {
 		$img_base64 = null;
 		$code       = (string) new Code();
-		$mp3        = new Mp3();
 
 		if ( $code ) {
 			$_SESSION['_mf_captcha_code'] = $code;
 
 			// Fields.
 			$img_base64 = esc_html( new Image( $code ) );
-			$mp3_base64 = $mp3->generate_stream_from_code( $code );
 
 			// Merge subdata into main data.
 			$response_message = 'Captcha successfully generated.';
@@ -50,7 +47,6 @@ class GetCaptchaCallback {
 		$response_data = array(
 			'message'      => $response_message,
 			'image_base64' => $img_base64,
-			'mp3_base64'   => $mp3_base64,
 		);
 
 		$response = new WP_REST_Response( $response_data );
