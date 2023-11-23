@@ -2,16 +2,16 @@
 # This file is distributed under the same license as the Mega Forms - Local Captcha plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Mega Forms - Local Captcha 1.0\n"
+"Project-Id-Version: Mega Forms - Local Captcha 1.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/mega-forms-local-captcha\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-05-17T14:02:29+02:00\n"
+"POT-Creation-Date: 2023-11-23T16:06:36+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.7.1\n"
+"X-Generator: WP-CLI 2.9.0\n"
 "X-Domain: mega-forms-local-captcha\n"
 
 #. Plugin Name of the plugin
@@ -31,23 +31,44 @@ msgstr ""
 msgid "Qbus Internetagentur GmbH"
 msgstr ""
 
-#: src/Settings.php:23
+#: src/Main.php:99
+#: src/Views.php:53
+msgid "Have verification code read out"
+msgstr ""
+
+#: src/Settings.php:44
 msgid "Local Captcha"
 msgstr ""
 
-#: src/Settings.php:36
+#: src/Settings.php:63
 msgid "Enable MobiCMS Captcha"
 msgstr ""
 
-#: src/Settings.php:37
+#: src/Settings.php:64
 msgid "Switch this on to enable locally generated MobiCMS captchas on all forms."
 msgstr ""
 
-#: src/Submissions.php:28
+#: src/Settings.php:71
+msgid "TTS Locale"
+msgstr ""
+
+#: src/Settings.php:72
+msgid "Enter a locale here that should be used for creating the TTS audio. Example: de, en, fr"
+msgstr ""
+
+#: src/Submissions.php:54
 msgid "Submission failed, you didn't complete the captcha challenge successfully."
 msgstr ""
 
-#: src/Views.php:25
-#: src/Views.php:28
+#: src/Views.php:60
+msgid "An audio file cannot be generated at the moment. Please try again later."
+msgstr ""
+
+#: src/Views.php:82
+#: src/Views.php:85
 msgid "Verification code"
+msgstr ""
+
+#: src/Views.php:89
+msgid "Regenerate verification code"
 msgstr ""

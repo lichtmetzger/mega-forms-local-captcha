@@ -5,15 +5,15 @@ msgstr ""
 "Project-Id-Version: Mega Forms - Local Captcha 1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/mega-forms-local-"
 "captcha\n"
-"POT-Creation-Date: 2023-05-17T14:02:29+02:00\n"
-"PO-Revision-Date: 2023-05-17 14:06+0200\n"
+"POT-Creation-Date: 2023-11-23T16:06:36+00:00\n"
+"PO-Revision-Date: 2023-11-23 17:09+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.3.1\n"
+"X-Generator: Poedit 3.4.1\n"
 "X-Domain: mf-local-captcha\n"
 
 #. Plugin Name of the plugin
@@ -33,26 +33,53 @@ msgstr "Integriert ein lokales Captcha von MobiCMS in Mega Forms."
 msgid "Qbus Internetagentur GmbH"
 msgstr "Qbus Internetagentur GmbH"
 
-#: src/Settings.php:23
+#: src/Main.php:99 src/Views.php:53
+msgid "Have verification code read out"
+msgstr "Bestätigungscode vorlesen lassen"
+
+#: src/Settings.php:44
 msgid "Local Captcha"
 msgstr "Lokales Captcha"
 
-#: src/Settings.php:36
+#: src/Settings.php:63
 msgid "Enable MobiCMS Captcha"
 msgstr "MobiCMS Captcha aktivieren"
 
-#: src/Settings.php:37
+#: src/Settings.php:64
 msgid ""
 "Switch this on to enable locally generated MobiCMS captchas on all forms."
 msgstr ""
 "Aktivieren Sie diese Option, um lokal generierte MobiCMS-Captchas auf allen "
 "Formularen zu aktivieren."
 
-#: src/Submissions.php:28
+#: src/Settings.php:71
+msgid "TTS Locale"
+msgstr "TTS-Sprache"
+
+#: src/Settings.php:72
+msgid ""
+"Enter a locale here that should be used for creating the TTS audio. Example: "
+"de, en, fr"
+msgstr ""
+"Geben Sie hier eine Sprache ein, die für die Erstellung des TTS-Audios "
+"verwendet werden soll. Beispiel: de, en, fr"
+
+#: src/Submissions.php:54
 msgid ""
 "Submission failed, you didn't complete the captcha challenge successfully."
 msgstr "Fehler beim Senden, Sie haben das Captcha nicht korrekt eingegeben."
 
-#: src/Views.php:25 src/Views.php:28
+#: src/Views.php:60
+msgid ""
+"An audio file cannot be generated at the moment. Please try again later."
+msgstr ""
+"Eine Audiodatei kann im Moment nicht generiert werden. Bitte versuchen Sie "
+"es später noch einmal."
+
+#: src/Views.php:82 src/Views.php:85
 msgid "Verification code"
 msgstr "Bestätigungscode"
+
+#: src/Views.php:89
+msgid "Regenerate verification code"
+msgstr "Bestätigungscode neu generieren"
