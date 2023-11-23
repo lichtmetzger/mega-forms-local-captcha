@@ -28,9 +28,8 @@ class Mp3 {
 	 * @return bool|string Base-64 encoded MP3 stream or false.
 	 */
 	public function generate_stream_from_code( $code ) {
-		$tts_provider                                      = new GoogleProvider();
 		mfget_option( 'mobicaptcha_tts_locale' ) ? $locale = mfget_option( 'mobicaptcha_tts_locale' ) : $locale = 'en';
-		$tts_provider->withLanguage( $locale );
+		$tts_provider                                      = new GoogleProvider($locale);
 		$tts = new TextToSpeech( $code, $tts_provider );
 
 		// Try generating an MP3 file - we might run into API limits here.
