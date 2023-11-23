@@ -22,7 +22,7 @@ sudo apt install curl gnupg2 -y
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 source ~/.bashrc
 nvm install 18.16.0
-nvm use 18.16.0
+nvm use
 ```
 
 Then, use the npm package manager to install the project-specific (dev-)dependencies (wp-scripts, sass, stylelint-config).

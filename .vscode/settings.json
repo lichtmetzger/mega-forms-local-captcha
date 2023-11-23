@@ -8,16 +8,18 @@
     "editor.codeActionsOnSave": {
         "source.fixAll": true
     },
+    // Enable ESLint
+    "[javascript]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
     // PHP/WORDPRESS
     "[php]": {
         "editor.formatOnSave": false,
         "editor.formatOnPaste": false
     },
     // PHPCS.
-    "phpcs.standard": "WordPress",
-    // PHPCBF.
-    "phpcbf.onsave": true,
-    "phpcbf.standard": "WordPress",
+    "phpcs.standard": "phpcs.xml",
     // PHP Files.
     "files.associations": {
         ".php_cs": "php",

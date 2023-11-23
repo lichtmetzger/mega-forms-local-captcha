@@ -8,7 +8,13 @@
             "@wordpress/stylelint-config/scss"
         ]
     },
+    "eslintConfig": {
+        "extends": [
+            "plugin:@wordpress/eslint-plugin/recommended"
+        ]
+    },
     "devDependencies": {
+        "@wordpress/eslint-plugin": "^14.8.0",
         "@wordpress/scripts": "^25.1.0",
         "@wordpress/stylelint-config": "^21.18.0",
         "sass": "^1.63.4"
