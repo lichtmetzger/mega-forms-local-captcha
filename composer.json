@@ -20,7 +20,8 @@
         }
     ],
     "require": {
-        "mobicms/captcha": "^3.1.0"
+        "mobicms/captcha": "^3.1.0",
+        "duncan3dc/speaker": "^1.4"
     },
     "autoload": {
         "psr-4": {

@@ -1,4 +1,4 @@
-/* global jQuery */
+/* global jQuery, mflcTrans */
 // Wait for the document to be ready
 jQuery( document ).ready( function ( $ ) {
 	// Listen for a click on the .mf-captcha-regenerate element
@@ -16,6 +16,20 @@ jQuery( document ).ready( function ( $ ) {
 				} else {
 					// Handle the case when the REST request fails or doesn't return the expected data
 					$( '.error-response' ).text( data.message );
+				}
+
+				// Replace the audio file if we got one
+				if ( data && data.mp3_base64 ) {
+					const playButtonString = mflcTrans.read_captcha;
+
+					$( '.mf-captcha-play-audio' ).html(
+						'<audio id="captcha-player" src="data:audio/mp3;base64,' +
+							data.mp3_base64 +
+							'" type="audio/mp3"></audio>' +
+							'<div class="play-button" onclick="document.getElementById(\'captcha-player\').play()">' +
+							playButtonString +
+							'</div>'
+					);
 				}
 			},
 			error( xhr, textStatus, errorThrown ) {

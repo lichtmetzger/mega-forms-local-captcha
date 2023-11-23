@@ -57,13 +57,21 @@ class Settings {
 
 		// Create new local captcha options.
 		$options['local-captcha'] = array(
-			'mobicaptcha_status' => array(
+			'mobicaptcha_status'     => array(
 				'priority'     => 10,
 				'type'         => 'switch',
 				'label'        => __( 'Enable MobiCMS Captcha', 'mega-forms-local-captcha' ),
 				'desc'         => __( 'Switch this on to enable locally generated MobiCMS captchas on all forms.', 'mega-forms-local-captcha' ),
 				'value'        => mfget_option( 'mobicaptcha_status', false ),
 				'sanitization' => 'boolean',
+			),
+			'mobicaptcha_tts_locale' => array(
+				'priority'     => 11,
+				'type'         => 'text',
+				'label'        => __( 'TTS Locale', 'mega-forms-local-captcha' ),
+				'desc'         => __( 'Enter a locale here that should be used for creating the TTS audio. Example: de, en, fr', 'mega-forms-local-captcha' ),
+				'value'        => mfget_option( 'mobicaptcha_tts_locale' ),
+				'sanitization' => 'string',
 			),
 		);
 

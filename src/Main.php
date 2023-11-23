@@ -90,5 +90,14 @@ class Main {
 
 		wp_register_script( 'mf-local-captcha', MF_LOCAL_CAPTCHA_PLUGIN_URI . 'assets/js/main.js', array( 'jquery' ), '1.0', true );
 		wp_enqueue_script( 'mf-local-captcha' );
+
+		// Pass translation variables to main script.
+		wp_localize_script(
+			'mf-local-captcha',
+			'mflcTrans',
+			array(
+				'read_captcha' => __( 'Have verification code read out', 'mega-forms-local-captcha' ),
+			)
+		);
 	}
 }
