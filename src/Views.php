@@ -28,7 +28,6 @@ class Views {
 	public function initialize() {
 
 		add_action( 'mf_after_hidden_inputs', array( $this, 'after_hidden_inputs' ), 10 );
-
 	}
 
 	/**
@@ -63,8 +62,12 @@ class Views {
 				<span class="mf_label">' . esc_html( __( 'Verification code', 'mega-forms-local-captcha' ) ) . '</span>
 				<span class="mf_required">*</span>
 				<div class="mf_input_captcha">
-					<img alt="' . esc_html( __( 'Verification code', 'mega-forms-local-captcha' ) ) . '" src="' . esc_html( new Image( $code ) ) . '">
-					<input type="text" placeholder="ABCD" name="_mf_captcha_code">
+					<img alt="' . esc_html( __( 'Verification code', 'mega-forms-local-captcha' ) ) . '" class="mf-captcha-image" src="' . esc_html( new Image( $code ) ) . '">
+					<input type="text" placeholder="ABCD" name="_mf_captcha_code" class="mf-captcha-image">
+				</div>
+				<div class="mf_captcha_functions">
+					<div class="mf-captcha-regenerate">' . esc_html( __( 'Regenerate captcha code', 'mega-forms-local-captcha' ) ) . '</div>
+					<div class="error-response"></div>
 				</div>
 			</div>';
 		}

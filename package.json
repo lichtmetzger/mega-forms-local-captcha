@@ -1,6 +1,6 @@
 {
     "scripts": {
-        "build-css": "sass -w scss/main.scss css/main.css",
+        "build-css": "sass -w scss/main.scss assets/css/main.css",
         "build-pot-file": "wp-scripts i18n make-pot --domain=mega-forms-local-captcha . languages/mega-forms-local-captcha.pot"
     },
     "stylelint": {

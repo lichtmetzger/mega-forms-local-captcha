@@ -11,6 +11,7 @@ namespace MfLocalCaptcha;
 use MfLocalCaptcha\Translations;
 use MfLocalCaptcha\Settings;
 use MfLocalCaptcha\Views;
+use MfLocalCaptcha\Rest\RestRoutes;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	die( '' );
@@ -58,29 +59,36 @@ class Main {
 	 * @return void
 	 */
 	public function load_main() {
-		// Load additional settings.
+		// Additional settings.
 		$settings = new Settings();
 		$settings->initialize();
 
-		// Load captcha code frontend views.
+		// Captcha code frontend views.
 		$views = new Views();
 		$views->initialize();
 
-		// Load submission validation.
+		// Submission validation.
 		$submissions = new Submissions();
 		$submissions->initialize();
 
-		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_global_styles' ) );
+		// REST endpoints.
+		$rest = new RestRoutes();
+		$rest->initialize();
+
+		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_global_files' ) );
 	}
 
 
 	/**
-	 * Registers the plugin's main CSS file on the frontend.
+	 * Registers the plugin's main CSS/JS file on the frontend.
 	 *
 	 * @return void
 	 */
-	public function enqueue_global_styles() {
-		wp_register_style( 'mf-local-captcha', MF_LOCAL_CAPTCHA_PLUGIN_URI . 'css/main.css', false, '1.1' );
+	public function enqueue_global_files() {
+		wp_register_style( 'mf-local-captcha', MF_LOCAL_CAPTCHA_PLUGIN_URI . 'assets/css/main.css', false, '1.1' );
 		wp_enqueue_style( 'mf-local-captcha' );
+
+		wp_register_script( 'mf-local-captcha', MF_LOCAL_CAPTCHA_PLUGIN_URI . 'assets/js/main.js', array( 'jquery' ), '1.0', true );
+		wp_enqueue_script( 'mf-local-captcha' );
 	}
 }
