@@ -11,4 +11,4 @@ pot:
 	./vendor/bin/wp i18n make-pot --domain=mega-forms-local-captcha . languages/mega-forms-local-captcha.pot
 
 release:
-	zip -r9 mega-forms-local-captcha.zip . -x *.git* node_modules/\* *.vscode* scss/\* package*.json composer.* Makefile Readme.md .nvmrc .npmrc
+	zip -r9 mega-forms-local-captcha.zip . -x *.git* node_modules/\* *.vscode* scss/\* package*.json composer.* Makefile Readme.md .nvmrc .npmrc phpcs.xml
