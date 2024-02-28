@@ -33,8 +33,6 @@ exclude: |
     node_modules/|
     vendor/|
     assets/css/|
-    src/blocks/|
-    .vscode/(.*)|
     .idea/(.*)
   )
 
