@@ -8,29 +8,13 @@ https://getcomposer.org/download/
 Then initialize it in the project folder:
 
 ```
-composer install --no-dev
-composer dump-autoload -o --no-dev
+composer install
+composer dump-autoload
 ```
 
-(Omit the --no-dev parameter if you want to use wpcs.)
+This project is based on the Node version specified in the .nvmrc file. **If you use a different version and commit a reformatted package.json, you will be punished.**
 
-This project is based on Node version 18.16.0. **If you use a different version and commit a reformatted package.json, you will be punished.**
-
-Install it with nvm:
-
-```
-sudo apt install curl gnupg2 -y
-curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
-source ~/.bashrc
-nvm install 18.16.0
-nvm use
-```
-
-Then, use the npm package manager to install the project-specific (dev-)dependencies (wp-scripts, sass, stylelint-config).
-
-```
-npm i
-```
+Look up Node Version Manager (nvm) to see how to use it.
 
 ## Translations
 
