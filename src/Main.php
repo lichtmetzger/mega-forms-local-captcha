@@ -8,96 +8,88 @@
 
 namespace MfLocalCaptcha;
 
-use MfLocalCaptcha\Translations;
-use MfLocalCaptcha\Settings;
-use MfLocalCaptcha\Views;
 use MfLocalCaptcha\Rest\RestRoutes;
-
-if ( ! defined( 'ABSPATH' ) ) {
-	die( '' );
-}
 
 /**
  * Initialize Mega Forms Local Captcha plugin.
  */
 class Main {
-	/**
-	 * Registers various actions to load the
-	 * main plugin features at specific times.
-	 *
-	 * @return void
-	 */
-	public function initialize() {
-		// Start our own session handler.
-		add_action( 'init', array( $this, 'start_session' ), 1 );
+    /**
+     * Starts our own session handler.
+     *
+     * @return bool
+     */
+    public function startSession(): bool {
+        if (!session_id()) {
+            session_start();
+            return true;
+        }
 
-		// Register translations before the main plugin features.
-		$translations = new Translations();
-		add_action( 'init', array( $translations, 'register' ), 5 );
+        return false;
+    }
 
-		// Initialize the main plugin.
-		add_action( 'init', array( $this, 'load_main' ), 10 );
-	}
+    /**
+     * Initializes the main plugin features.
+     *
+     * @return void
+     */
+    public function loadMain(): void {
+        // Additional settings.
+        $settings = new Settings();
+        $settings->initialize();
 
-	/**
-	 * Starts our own session handler.
-	 *
-	 * @return bool
-	 */
-	public function start_session() {
-		if ( ! session_id() ) {
-			session_start();
-			return true;
-		}
+        // Captcha code frontend views.
+        $views = new Views();
+        $views->initialize();
 
-		return false;
-	}
+        // Submission validation.
+        $submissions = new Submissions();
+        $submissions->initialize();
 
-	/**
-	 * Initializes the main plugin features.
-	 *
-	 * @return void
-	 */
-	public function load_main() {
-		// Additional settings.
-		$settings = new Settings();
-		$settings->initialize();
+        // REST endpoints.
+        $rest = new RestRoutes();
+        $rest->initialize();
 
-		// Captcha code frontend views.
-		$views = new Views();
-		$views->initialize();
+        add_action('wp_enqueue_scripts', [$this, 'enqueueGlobalFiles']);
+    }
 
-		// Submission validation.
-		$submissions = new Submissions();
-		$submissions->initialize();
+    /**
+     * Registers various actions to load the
+     * main plugin features at specific times.
+     *
+     * @return void
+     */
+    public function initialize(): void {
+        // Start our own session handler.
+        add_action('init', [$this, 'startSession'], 1);
 
-		// REST endpoints.
-		$rest = new RestRoutes();
-		$rest->initialize();
+        // Register translations before the main plugin features.
+        $translations = new Translations();
+        add_action('init', [$translations, 'register'], 5);
 
-		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_global_files' ) );
-	}
+        // Initialize the main plugin.
+        add_action('init', [$this, 'loadMain']);
+    }
 
+    /**
+     * Registers the plugin's main CSS/JS file on the frontend.
+     *
+     * @return void
+     */
+    public function enqueueGlobalFiles(): void {
+        wp_register_style('mf-local-captcha', MF_LOCAL_CAPTCHA_PLUGIN_URI . 'assets/css/main.css', false, '1.1');
+        wp_enqueue_style('mf-local-captcha');
 
-	/**
-	 * Registers the plugin's main CSS/JS file on the frontend.
-	 *
-	 * @return void
-	 */
-	public function enqueue_global_files() {
-		wp_register_style( 'mf-local-captcha', MF_LOCAL_CAPTCHA_PLUGIN_URI . 'assets/css/main.css', false, '1.1' );
-		wp_enqueue_style( 'mf-local-captcha' );
+        wp_register_script('mf-local-captcha', MF_LOCAL_CAPTCHA_PLUGIN_URI . 'assets/js/main.js', ['jquery'], '1.0', true);
+        wp_enqueue_script('mf-local-captcha');
 
-		wp_register_script( 'mf-local-captcha', MF_LOCAL_CAPTCHA_PLUGIN_URI . 'assets/js/main.js', array( 'jquery' ), '1.0', true );
-		wp_enqueue_script( 'mf-local-captcha' );
-
-		// Pass translation variables to main script.
-		wp_localize_script(
-			'mf-local-captcha',
-			'mflcTrans',
-			array(
-				'read_captcha' => __( 'Have verification code read out', 'mega-forms-local-captcha' ),
-			)
-		);
-	}
+        // Pass translation variables to main script.
+        wp_localize_script(
+            'mf-local-captcha',
+            'mflcTrans',
+            [
+                'read_captcha' => __('Have verification code read out', 'mega-forms-local-captcha'),
+            ]
+        );
+    }
 }

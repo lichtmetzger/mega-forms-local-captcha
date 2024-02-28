@@ -8,54 +8,47 @@
 
 namespace MfLocalCaptcha\Rest;
 
-use \WP_REST_Response;
-use Mobicms\Captcha\Image;
-use Mobicms\Captcha\Code;
 use MfLocalCaptcha\Audio\Mp3;
-
-if ( ! defined( 'ABSPATH' ) ) {
-	die( '' );
-}
+use MfLocalCaptcha\Mobicms\Captcha\Code;
+use MfLocalCaptcha\Mobicms\Captcha\Image;
+use WP_REST_Response;
 
 /**
  * Register GetCaptchaCallback class.
  */
 class GetCaptchaCallback {
 
-	/**
-	 * Register the callback method.
-	 *
-	 * @param  WP_REST_Request $request The current request object.
-	 * @return array Multi-dimensional array with detailed data.
-	 */
-	public function initialize( $request ) {
-		$img_base64 = null;
-		$code       = (string) new Code();
-		$mp3        = new Mp3();
+    /**
+     * Register the callback method.
+     *
+     * @return WP_REST_Response Multidimensional array with detailed data.
+     */
+    public function initialize(): WP_REST_Response {
+        $img_base64 = null;
+        $mp3_base64 = false;
+        $code = (string)new Code();
+        $mp3 = new Mp3();
 
-		if ( $code ) {
-			$_SESSION['_mf_captcha_code'] = $code;
+        if ($code) {
+            $_SESSION['_mf_captcha_code'] = $code;
 
-			// Fields.
-			$img_base64 = esc_html( new Image( $code ) );
-			$mp3_base64 = $mp3->generate_stream_from_code( $code );
+            // Fields.
+            $img_base64 = esc_html(new Image($code));
+            $mp3_base64 = $mp3->generateStreamFromCode($code);
 
-			// Merge subdata into main data.
-			$response_message = 'Captcha successfully generated.';
-		} else {
-			// No data is found.
-			$response_message = 'Captcha could not be generated.';
-		}
+            // Merge subdata into main data.
+            $response_message = 'Captcha successfully generated.';
+        } else {
+            // No data is found.
+            $response_message = 'Captcha could not be generated.';
+        }
 
-		$response_data = array(
-			'message'      => $response_message,
-			'image_base64' => $img_base64,
-			'mp3_base64'   => $mp3_base64,
-		);
+        $response_data = [
+            'message' => $response_message,
+            'image_base64' => $img_base64,
+            'mp3_base64' => $mp3_base64,
+        ];
 
-		$response = new WP_REST_Response( $response_data );
-
-		return $response;
-	}
-
+        return new WP_REST_Response($response_data);
+    }
 }

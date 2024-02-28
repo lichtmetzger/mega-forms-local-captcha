@@ -1,0 +1,47 @@
+name: Automated Checks
+
+on:
+  push:
+    branches:
+      - '**'
+
+    tags-ignore:
+      - '**'
+
+  pull_request:
+    branches:
+      - '**'
+
+    tags-ignore:
+      - '**'
+
+jobs:
+  # pre-commit Checks
+  pre-commit:
+    name: pre-commit Checks
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Composer
+        uses: php-actions/composer@v6
+      #        with:
+      #          composer-options: install --no-dev --no-interaction --no-progress --no-suggest --optimize-autoloader --classmap-authoritative
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          check-latest: true
+
+          # Set up Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm install
+
+      - name: Run Pre Commit Checks
+        uses: pre-commit/action@v3.0.1

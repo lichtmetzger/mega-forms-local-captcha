@@ -6,6 +6,7 @@ First install composer:
 https://getcomposer.org/download/
 
 Then initialize it in the project folder:
+
 ```
 composer install --no-dev
 composer dump-autoload -o --no-dev
@@ -54,16 +55,22 @@ scss/main.scss is compiled into css/main.css.
 
 The intended way to build this is to use sass included by npm:
 
-    npm run build-css
+```
+npm run build-css
+```
 
 ## Build release ZIP file
 
 Make sure zip is installed:
 
-    sudo apt install zip
+```
+sudo apt install zip
+```
 
 Then run:
 
-    make release
+```
+make release
+```
 
 and you will get an unbloated mega-forms-local-captcha.zip that you can install in WordPress.

@@ -7,6 +7,10 @@ download-from-dev:
 upload-to-dev:
 	rsync -avz --delete --delete-excluded --exclude .git --exclude .vscode --exclude='/node_modules/*' -e ssh ./ gpmaster@gpmaster.qbus.dev:dev/public/wp-content/plugins/mega-forms-local-captcha/
 
+upload-to-gomi:
+	rsync -avz --delete --delete-excluded --exclude .git --exclude .vscode --exclude='/node_modules/*' -e ssh ./ gomi@gomi.qbus.dev:dev/public/wp-content/plugins/mega-forms-local-captcha/
+
+
 pot:
 	./vendor/bin/wp i18n make-pot --domain=mega-forms-local-captcha . languages/mega-forms-local-captcha.pot
 

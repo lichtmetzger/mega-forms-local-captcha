@@ -8,21 +8,17 @@
 
 namespace MfLocalCaptcha;
 
-if ( ! defined( 'ABSPATH' ) ) {
-	die( '' );
-}
-
 /**
  * Registers plugin translations.
  */
 class Translations {
-	/**
-	 * Register .mo language files.
-	 *
-	 * @return void
-	 */
-	public function register() {
-		// Relative path to WP_PLUGIN_DIR.
-		load_plugin_textdomain( 'mega-forms-local-captcha', false, 'mega-forms-local-captcha/languages/' );
-	}
+    /**
+     * Register .mo language files.
+     *
+     * @return void
+     */
+    public function register(): void {
+        // Relative path to WP_PLUGIN_DIR.
+        load_plugin_textdomain('mega-forms-local-captcha', false, 'mega-forms-local-captcha/languages/');
+    }
 }

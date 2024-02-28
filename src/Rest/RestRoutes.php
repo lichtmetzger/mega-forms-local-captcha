@@ -8,46 +8,39 @@
 
 namespace MfLocalCaptcha\Rest;
 
-use MfLocalCaptcha\Rest\GetCaptchaCallback;
-
-if ( ! defined( 'ABSPATH' ) ) {
-	die( '' );
-}
-
 /**
  * Register RestRoutes class.
  */
 class RestRoutes {
 
-	/**
-	 * Setup Rest routes.
-	 *
-	 * @return void
-	 */
-	public function initialize() {
-		add_action( 'rest_api_init', array( $this, 'register_get_captcha_route' ) );
-	}
+    /**
+     * Setup Rest routes.
+     *
+     * @return void
+     */
+    public function initialize(): void {
+        add_action('rest_api_init', [$this, 'registerGetCaptchaRoute']);
+    }
 
-	/**
-	 * Register a route to receive a captcha image.
-	 * This results in the URL /wp-json/mega-forms/v1/get-captcha/
-	 *
-	 * @return void
-	 */
-	public function register_get_captcha_route() {
-		$get_captcha_callback = new GetCaptchaCallback();
+    /**
+     * Register a route to receive a captcha image.
+     * This results in the URL /wp-json/mega-forms/v1/get-captcha/
+     *
+     * @return void
+     */
+    public function registerGetCaptchaRoute(): void {
+        $get_captcha_callback = new GetCaptchaCallback();
 
-		register_rest_route(
-			'mega-forms/v1',
-			'/get-captcha/',
-			array(
-				'methods'             => 'GET',
-				'callback'            => array( $get_captcha_callback, 'initialize' ),
-				'permission_callback' => '__return_true',
-				// No arguments.
-				'args'                => array(),
-			),
-		);
-	}
-
+        register_rest_route(
+            'mega-forms/v1',
+            '/get-captcha/',
+            [
+                'methods' => 'GET',
+                'callback' => [$get_captcha_callback, 'initialize'],
+                'permission_callback' => '__return_true',
+                // No arguments.
+                'args' => [],
+            ],
+        );
+    }
 }

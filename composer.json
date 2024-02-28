@@ -2,15 +2,23 @@
     "name": "qbus/mf-local-captcha",
     "description": "Integrates a local captcha by MobiCMS into Mega Forms.",
     "require-dev": {
+        "roave/security-advisories": "dev-latest",
         "wp-cli/wp-cli-bundle": "*",
         "squizlabs/php_codesniffer": "*",
-        "wp-coding-standards/wpcs": "^2.3",
-        "dealerdirect/phpcodesniffer-composer-installer": "^1.0"
+        "brianhenryie/strauss": "^0.16.0"
+    },
+    "extra": {
+        "strauss": {
+            "target_directory": "vendor"
+        }
     },
     "config": {
+        "classmap-authoritative": true,
+        "optimize-autoloader": true,
         "preferred-install": "dist",
-        "allow-plugins": {
-            "dealerdirect/phpcodesniffer-composer-installer": true
+        "sort-packages": true,
+        "platform": {
+            "php": "8.1.27"
         }
     },
     "authors": [
@@ -23,9 +31,24 @@
         "mobicms/captcha": "^3.1.0",
         "duncan3dc/speaker": "^1.4"
     },
+    "scripts": {
+        "strauss": [
+            "Composer\\Config::disableProcessTimeout",
+            "vendor/bin/strauss"
+        ],
+        "post-install-cmd": [
+            "@strauss"
+        ],
+        "post-update-cmd": [
+            "@strauss"
+        ]
+    },
     "autoload": {
         "psr-4": {
             "MfLocalCaptcha\\": "src/"
-        }
+        },
+        "classmap": [
+            "vendor"
+        ]
     }
 }

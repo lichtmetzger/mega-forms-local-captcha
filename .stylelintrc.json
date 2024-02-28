@@ -1,0 +1,73 @@
+{
+    "extends": [
+        "stylelint-config-standard",
+        "stylelint-config-standard-scss"
+    ],
+    "rules": {
+        "property-no-vendor-prefix": [
+            true,
+            {
+                "ignoreProperties": [
+                    "box-shadow",
+                    "mask-image",
+                    "text-size-adjust"
+                ]
+            }
+        ],
+        "value-no-vendor-prefix": [
+            true,
+            {
+                "ignoreValues": [
+                    "gradient",
+                    "linear-gradient"
+                ]
+            }
+        ],
+        "at-rule-empty-line-before": [
+            "always",
+            {
+                "except": [
+                    "blockless-after-same-name-blockless",
+                    "first-nested"
+                ],
+                "ignore": [
+                    "after-comment"
+                ]
+            }
+        ],
+        "comment-empty-line-before": [
+            "always",
+            {
+                "except": [
+                    "first-nested"
+                ],
+                "ignore": [
+                    "after-comment",
+                    "stylelint-commands"
+                ]
+            }
+        ],
+        "comment-whitespace-inside": "always",
+        "color-no-hex": true,
+        "color-function-notation": [
+            "modern",
+            {
+                "message": "Please use modern color notation."
+            }
+        ],
+        "number-max-precision": 10,
+        "no-descending-specificity": null,
+        "media-feature-range-notation": "prefix",
+        "selector-class-pattern": "_?[a-z0-9]+(-[a-z0-9]+)*$",
+        "selector-id-pattern": "_?[a-z0-9]+(-[a-z0-9]+)*$",
+        "selector-type-case": [
+            "lower",
+            {
+                "ignoreTypes": [
+                    "/regex/",
+                    "non-regex"
+                ]
+            }
+        ]
+    }
+}
