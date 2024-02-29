@@ -21,6 +21,18 @@
             }
         }
 
+        .captcha_notice {
+            display: none;
+            padding: 5px 10px;
+            margin-bottom: 10px;
+            font-size: 90%;
+            margin-top: 5px;
+            background: #ffecec;
+            color: #e80000;
+            font-weight: 400;
+            clear: both;
+        }
+
         .mf_captcha_functions {
             display: block;
 

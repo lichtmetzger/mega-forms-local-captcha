@@ -45,7 +45,17 @@ class Submissions {
                     return true;
                 } else {
                     // CAPTCHA code is incorrect, show an error to the user.
-                    throw new Exception(__('Submission failed, you didn\'t complete the captcha challenge successfully.', 'mega-forms-local-captcha'));
+                    // Using CSS here because the validation function from MegaForms
+                    // cannot be utilized for custom fields in the footer.
+                    throw new Exception(__('Submission failed, you didn\'t complete the captcha challenge successfully.', 'mega-forms-local-captcha')
+                        .'<style>
+                            input.mf-captcha-image {
+                                border: 1px solid #e80000;
+                            }
+                            .captcha_notice {
+                                display: block !important;
+                            }
+                        </style>');
                 }
             }
         }

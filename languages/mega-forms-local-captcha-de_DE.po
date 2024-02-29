@@ -5,58 +5,62 @@ msgstr ""
 "Project-Id-Version: Mega Forms - Local Captcha 1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/mega-forms-local-"
 "captcha\n"
-"POT-Creation-Date: 2023-11-23T16:06:36+00:00\n"
-"PO-Revision-Date: 2023-11-23 17:09+0100\n"
+"POT-Creation-Date: 2024-02-29T18:02:32+00:00\n"
+"PO-Revision-Date: 2024-02-29 19:03+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.4.1\n"
+"X-Generator: Poedit 3.4.2\n"
 "X-Domain: mf-local-captcha\n"
 
 #. Plugin Name of the plugin
+#: mega-forms-local-captcha.php
 msgid "Mega Forms - Local Captcha"
 msgstr "Mega Forms - Lokales Captcha"
 
 #. Plugin URI of the plugin
 #. Author URI of the plugin
+#: mega-forms-local-captcha.php
 msgid "https://qbus.de"
 msgstr "https://qbus.de"
 
 #. Description of the plugin
+#: mega-forms-local-captcha.php
 msgid "Integrates a local captcha by MobiCMS into Mega Forms."
 msgstr "Integriert ein lokales Captcha von MobiCMS in Mega Forms."
 
 #. Author of the plugin
+#: mega-forms-local-captcha.php
 msgid "Qbus Internetagentur GmbH"
 msgstr "Qbus Internetagentur GmbH"
 
-#: src/Main.php:99 src/Views.php:53
+#: src/Main.php:91 src/Views.php:49
 msgid "Have verification code read out"
 msgstr "Bestätigungscode vorlesen lassen"
 
-#: src/Settings.php:44
+#: src/Settings.php:39
 msgid "Local Captcha"
 msgstr "Lokales Captcha"
 
-#: src/Settings.php:63
+#: src/Settings.php:57
 msgid "Enable MobiCMS Captcha"
 msgstr "MobiCMS Captcha aktivieren"
 
-#: src/Settings.php:64
+#: src/Settings.php:58
 msgid ""
 "Switch this on to enable locally generated MobiCMS captchas on all forms."
 msgstr ""
 "Aktiviere diese Option, um lokal generierte MobiCMS-Captchas auf allen "
 "Formularen zu aktivieren."
 
-#: src/Settings.php:71
+#: src/Settings.php:65
 msgid "TTS Locale"
 msgstr "TTS-Sprache"
 
-#: src/Settings.php:72
+#: src/Settings.php:66
 msgid ""
 "Enter a locale here that should be used for creating the TTS audio. Example: "
 "de, en, fr"
@@ -64,22 +68,26 @@ msgstr ""
 "Gib hier eine Sprache ein, die für die Erstellung des TTS-Audios verwendet "
 "werden soll. Beispiel: de, en, fr"
 
-#: src/Submissions.php:54
+#: src/Submissions.php:50
 msgid ""
 "Submission failed, you didn't complete the captcha challenge successfully."
 msgstr "Fehler beim Senden, du hast das Captcha nicht korrekt eingegeben."
 
-#: src/Views.php:60
+#: src/Views.php:56
 msgid ""
 "An audio file cannot be generated at the moment. Please try again later."
 msgstr ""
 "Eine Audiodatei kann im Moment nicht generiert werden. Bitte versuche es "
 "später noch einmal."
 
-#: src/Views.php:82 src/Views.php:85
+#: src/Views.php:79 src/Views.php:82
 msgid "Verification code"
 msgstr "Bestätigungscode"
 
-#: src/Views.php:89
+#: src/Views.php:85
+msgid "The captcha is a required field."
+msgstr "Das CAPTCHA ist ein Pflichtfeld."
+
+#: src/Views.php:87
 msgid "Regenerate verification code"
 msgstr "Bestätigungscode neu generieren"

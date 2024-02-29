@@ -82,6 +82,7 @@ class Views {
                     <img alt="' . esc_html(__('Verification code', 'mega-forms-local-captcha')) . '" class="mf-captcha-image" src="' . esc_html(new Image($code)) . '">
                         <input type="text" placeholder="ABCD" name="_mf_captcha_code" class="mf-captcha-image">
                 </div>
+                <span class="captcha_notice">'.__("The captcha is a required field.", 'mega-forms-local-captcha').'</span>
                 <div class="mf_captcha_functions">
                     <div class="mf-captcha-regenerate">' . esc_html(__('Regenerate verification code', 'mega-forms-local-captcha')) . '</div>
                     ' . $html_audio_element . '
